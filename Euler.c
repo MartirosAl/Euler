@@ -46,7 +46,6 @@ unsigned long long Problem_3(const unsigned long long number_)
    unsigned long long maxprime_ = 0;
    unsigned long long num = number_;
 
-
    for (unsigned long long i = 3; (Square(i) - 1) < (num); i += 2)
    {
       if (IsPrime(i) && num % i == 0)
