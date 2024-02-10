@@ -103,4 +103,37 @@ unsigned long long Problem_5(const int number_)
    return smallest_multiple;
 }
 
+int Problem_6(unsigned int n)
+{
+	unsigned int sum_sqrt = 0;
+	unsigned int sqrt_sum = 0;
+
+	for (unsigned int i = 1; i <= n; i++)
+	{
+		sum_sqrt = sum_sqrt + i * i;
+		sqrt_sum = sqrt_sum + i;
+	}
+
+	sqrt_sum = sqrt_sum * sqrt_sum;
+
+	return sqrt_sum - sum_sqrt;
+}
+
+unsigned int Problem_7(unsigned int n)
+{
+	if (n == 1)
+		return 2;
+
+	unsigned int prime_number = 2;
+	unsigned int counter_prime = 1;
+
+	while (counter_prime < n)
+	{
+		prime_number++;
+
+		if (IsPrime(prime_number) == 1)
+			counter_prime++;
+	}
+	return prime_number;
+}
 
