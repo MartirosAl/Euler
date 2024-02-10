@@ -1,4 +1,5 @@
 #include "Functions.h"
+#include <math.h>
 
 unsigned long long Square(const long long value_)
 {
