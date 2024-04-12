@@ -46,7 +46,7 @@ unsigned long long Problem_3(const unsigned long long number_)
    unsigned long long maxprime_ = 0;
    unsigned long long num = number_;
 
-   for (unsigned long long i = 3; (Square(i) - 1) < (num); i += 2)
+   for (unsigned long long i = 3; Square(i) - 1 < num; i += 2)
    {
       if (IsPrime(i) && num % i == 0)
          maxprime_ = i;
@@ -136,4 +136,24 @@ unsigned int Problem_7(unsigned int n)
 	}
 	return prime_number;
 }
+
+unsigned long long int Problem_8(char* number_)
+{
+   int num;
+   unsigned long long int prod = 1;
+   unsigned long long int res = 0;
+   for (int i = 13; number_[i+1] != '\0'; i++)
+   {
+      num = From_Char_to_Int(number_, i - 13, i);
+      for (int t = 0; t < 13; t++)
+      {
+         prod = prod * (num % 10);
+         num = num / 10;
+      }
+      if (prod > res)
+         res = prod;
+   }
+   return res;
+}
+
 

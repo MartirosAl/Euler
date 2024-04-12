@@ -17,4 +17,8 @@ int Reverse(const int number_);
 
 int IsPrime(const unsigned long long number_);
 
+int From_Char_to_Int(const char* c_number, int n1, int n2);
+
+int Count_Char(const char* str);
+
 #endif
