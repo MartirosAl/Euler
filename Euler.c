@@ -1,4 +1,6 @@
+#include <stdlib.h>
 #include "Euler.h"
+#include "Functions.h"
 
 unsigned long long Problem_1(const unsigned int number_, const unsigned int* multiples_, const unsigned int size_)
 {
@@ -139,13 +141,14 @@ unsigned int Problem_7(unsigned int n)
 
 unsigned long long int Problem_8(char* number_)
 {
-   int num;
+   unsigned long long int num = 0;
    unsigned long long int prod = 1;
    unsigned long long int res = 0;
-   for (int i = 13; number_[i+1] != '\0'; i++)
+   for (int i = 13; number_[i] != '\0'; i++)
    {
+      prod = 1;
       num = From_Char_to_Int(number_, i - 13, i);
-      for (int t = 0; t < 13; t++)
+      while (num)
       {
          prod = prod * (num % 10);
          num = num / 10;
@@ -154,6 +157,53 @@ unsigned long long int Problem_8(char* number_)
          res = prod;
    }
    return res;
+}
+
+
+
+int Problem_9(int sum_)
+{
+   int a = 0;
+   int b = 1;
+   int c = 2;
+
+   while (c < sum_)
+   {
+      b = 1;
+      while (b < c)
+      {
+         a = 0;
+         while (a < b)
+         {
+            if (a + b + c == sum_ && Square(a) + Square(b) == Square(c))
+               return a * b * c;
+            a++;
+         }
+         b++;
+      }
+      c++;
+   }
+
+   return 0;
+}
+
+unsigned long long Problem_10(const int number_)
+{
+   unsigned long long sum = 0;
+   unsigned long long* numbers;
+
+   numbers = calloc(number_, sizeof(int));
+  
+   int num = 2;
+   while(num < number_)
+   {
+
+      numbers[num] = 1;
+      for (int i = 1; Square(i) <= number_ + 1; i++)
+         numbers[i * num] = 0;
+
+   }
+   return sum;
 }
 
 

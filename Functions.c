@@ -23,9 +23,12 @@ bool IsPalindrome(const int number_)
 	return (number_ == Reverse(number_));
 }
 
-int IsPrime(const unsigned long long number_)
+bool IsPrime(const unsigned long long number_)
 {
-	if (number_ % 2 == 0 && number_ != 2)
+	if (number_ == 2)
+		return true;
+
+	if (number_ % 2 == 0 || number_ < 2)
 		return false;
 
 	for (unsigned long long i = 3; i < (sqrt(number_) + 1); i += 2)
@@ -49,12 +52,11 @@ int Count_Char(const char* str)
 	return count;
 }
 
-int From_Char_to_Int(const char* c_number, int n1, int n2)
+unsigned long long int From_Char_to_Int(const char* c_number, int n1, int n2)
 {
-	int counter = 0;
-	char numbers[10] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+	unsigned long long int counter = 0;
 	for (int i = n1; i < n2; i++)
-		for (int x = 0; x < 10; x++)
-			if (numbers[x] == c_number[i])
-				counter = counter * 10 + x;
+		counter = (counter * 10 + ((int)(c_number[i]) - 48));
+
+	return counter;
 }

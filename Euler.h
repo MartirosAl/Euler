@@ -26,3 +26,7 @@ unsigned int Problem_6(unsigned int n);
 unsigned int Problem_7(unsigned int n);
 
 unsigned long long int Problem_8(const char* number);
+
+int Problem_9(int sum_);
+
+unsigned long long Problem_10(int number_);
