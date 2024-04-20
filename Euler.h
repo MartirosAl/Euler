@@ -1,13 +1,12 @@
 #pragma once
 
-/*
-* @brief Íàéòè ñóììó ÷èñåë Ôèáîíà÷è
-* @param number_ : Ïðåäåë ÷èñëà Ôèáîíà÷è
-* @return Ñóììà ÷èñåë Ôèáîíà÷è êðàòíûõ 2
-*/
+unsigned long long Problem_1(const unsigned int number_, const unsigned int* multiples_, const unsigned int size_);
+
+unsigned long long Problem_2(const unsigned int number_);
+
 unsigned long long Problem_3(const unsigned long long number_);
 
-unsigned long long Problem_4();
+unsigned long long Problem_4(int n_);
 
 unsigned long long Problem_5(const int number_);
 

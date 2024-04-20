@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "Euler.h"
+#include "Math.h"
 #include "Functions.h"
 
 unsigned long long Problem_1(const unsigned int number_, const unsigned int* multiples_, const unsigned int size_)
@@ -57,11 +58,9 @@ unsigned long long Problem_3(const unsigned long long number_)
    return maxprime_;
 }
 
-unsigned long long Problem_4()
+unsigned long long Problem_4(int n_)
 {
-   int x1 = 0;
-   int y1 = 0;
-   int max_number = 1000;
+   int max_number = pow(10,n_);
    int max_palindrom = 0;
 
    for (int x = 100; x < max_number; x++)
@@ -75,7 +74,7 @@ unsigned long long Problem_4()
       }
    }
 
-   return max_number;
+   return max_palindrom;
 }
 
 unsigned long long Problem_5(const int number_)
@@ -86,15 +85,13 @@ unsigned long long Problem_5(const int number_)
    for (long long multiple = 20; multiple < 999999999; multiple += 20)
    {
       counter = 0;
+
       for (int n = 1; n <= number_; n++)
          if (multiple % n != 0)
-         {
             break;
-         }
          else
-         {
             counter++;
-         }
+
       if (counter == 20)
       {
          smallest_multiple = multiple;

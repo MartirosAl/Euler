@@ -16,6 +16,7 @@ int Reverse(const int number_)
 		rev = rev * 10 + rem; 
 		n = n / 10; 
 	}
+	return rev;
 }
 
 bool IsPalindrome(const int number_)
