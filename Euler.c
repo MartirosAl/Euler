@@ -187,22 +187,28 @@ int Problem_9(int sum_)
    return 0;
 }
 
-unsigned long long Problem_10(const int number_)
+unsigned long long Problem_10(const unsigned long long n_)
 {
    unsigned long long sum = 0;
-   unsigned long long* numbers;
 
-   numbers = calloc(number_, sizeof(int));
-  
-   int num = 2;
-   while(num < number_)
-   {
+   char* numbers = (char*)calloc(n_, sizeof(unsigned long long));
+   if (numbers == NULL)
+      return -2;
 
-      numbers[num] = 1;
-      for (int i = 1; Square(i) <= number_ + 1; i++)
-         numbers[i * num] = 0;
 
-   }
+   for (unsigned long long x = 2; x < n_; x++)
+      numbers[x] = 1;
+   numbers[0] = 0;
+   numbers[1] = 0;
+
+   for (unsigned long long num = 2; num < n_; num++)
+      if (numbers[num] == 1)
+         for (unsigned long long i = num; i*num < n_; i++)
+            numbers[i * num] = 0;
+
+   for (unsigned long long i = 0; i < n_; i++)
+      sum = sum + (numbers[i] == 1 ? i : 0);
+
    return sum;
 }
 

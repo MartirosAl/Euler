@@ -16,7 +16,7 @@ unsigned long long Problem_5(const int number_);
 * @param n: число до которого нужно искать
 * @return Разность между квадратом суммы и суммой квадратов
 */
-unsigned int Problem_6(unsigned int n);
+int Problem_6(unsigned int n);
 
 /*
 * @brief Находит n-ное простое число
@@ -29,4 +29,4 @@ unsigned long long int Problem_8(const char* number);
 
 int Problem_9(int sum_);
 
-unsigned long long Problem_10(int number_);
+unsigned long long Problem_10(const unsigned long long n_);
