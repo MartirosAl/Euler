@@ -136,15 +136,15 @@ unsigned int Problem_7(unsigned int n)
 	return prime_number;
 }
 
-unsigned long long int Problem_8(char* number_)
+unsigned long long int Problem_8(char* number_, int size)
 {
    unsigned long long int num = 0;
    unsigned long long int prod = 1;
    unsigned long long int res = 0;
-   for (int i = 13; number_[i] != '\0'; i++)
+   for (int i = size; number_[i] != '\0'; i++)
    {
       prod = 1;
-      num = From_Char_to_Int(number_, i - 13, i);
+      num = From_Char_to_Int(number_, i - size, i);
       while (num)
       {
          prod = prod * (num % 10);
