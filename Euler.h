@@ -24,7 +24,7 @@ int Problem_6(unsigned int n);
 */
 unsigned int Problem_7(unsigned int n);
 
-unsigned long long int Problem_8(const char* number);
+unsigned long long int Problem_8(const char* number, int size);
 
 int Problem_9(int sum_);
 
